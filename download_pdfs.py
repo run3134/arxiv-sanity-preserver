@@ -3,7 +3,7 @@ import time
 import pickle
 import shutil
 import random
-from  urllib.request import urlopen
+from urllib.request import urlopen
 
 from utils import Config
 
@@ -17,6 +17,7 @@ db = pickle.load(open(Config.db_path, 'rb'))
 for pid,j in db.items():
   
   pdfs = [x['href'] for x in j['links'] if x['type'] == 'application/pdf']
+  # pdfs = [x['href'] for x in entries[0]['links'] if x['type'] == 'application/pdf']
   assert len(pdfs) == 1
   pdf_url = pdfs[0] + '.pdf'
   basename = pdf_url.split('/')[-1]

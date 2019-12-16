@@ -3,6 +3,9 @@ Very simple script that simply iterates over all files data/pdf/f.pdf
 and create a file data/txt/f.pdf.txt that contains the raw text, extracted
 using the "pdftotext" command. If a pdf cannot be converted, this
 script will not produce the output file.
+
+why do we need to convert pdf to text????
+A: for ml model run on papers
 """
 
 import os

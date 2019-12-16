@@ -678,7 +678,9 @@ if __name__ == "__main__":
 
   print('connecting to mongodb...')
   client = pymongo.MongoClient()
+  print("created mongo client!!!")
   mdb = client.arxiv
+  print("created mdb!!!")
   tweets_top1 = mdb.tweets_top1
   tweets_top7 = mdb.tweets_top7
   tweets_top30 = mdb.tweets_top30
@@ -686,6 +688,7 @@ if __name__ == "__main__":
   tags_collection = mdb.tags
   goaway_collection = mdb.goaway
   follow_collection = mdb.follow
+  print("created follow_collection!!!")
   print('mongodb tweets_top1 collection size:', tweets_top1.count())
   print('mongodb tweets_top7 collection size:', tweets_top7.count())
   print('mongodb tweets_top30 collection size:', tweets_top30.count())
@@ -695,6 +698,7 @@ if __name__ == "__main__":
   print('mongodb follow collection size:', follow_collection.count())
   
   TAGS = ['insightful!', 'thank you', 'agree', 'disagree', 'not constructive', 'troll', 'spam']
+
 
   # start
   if args.prod:

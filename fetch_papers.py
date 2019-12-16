@@ -79,7 +79,14 @@ if __name__ == "__main__":
     print("Results %i - %i" % (i,i+args.results_per_iteration))
     query = 'search_query=%s&sortBy=lastUpdatedDate&start=%i&max_results=%i' % (args.search_query,
                                                          i, args.results_per_iteration)
-    with urllib.request.urlopen(base_url+query) as url:
+
+    # search_query = 'cat:cs.CV+OR+cat:cs.AI+OR+cat:cs.LG+OR+cat:cs.CL+OR+cat:cs.NE+OR+cat:stat.ML'
+    # query = 'search_query=%s&sortBy=lastUpdatedDate&start=%i&max_results=%i' % (search_query,
+    #                                                      1, 5)
+    cur_url = base_url + query
+
+
+    with urllib.request.urlopen(cur_url) as url:
       response = url.read()
     parse = feedparser.parse(response)
     num_added = 0

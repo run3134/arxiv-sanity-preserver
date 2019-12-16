@@ -36,8 +36,8 @@ The processing pipeline requires you to run a series of scripts, and at this sta
 5. Run `analyze.py` to compute tfidf vectors for all documents based on bigrams. Saves a `tfidf.p`, `tfidf_meta.p` and `sim_dict.p` pickle files.
 6. Run `buildsvm.py` to train SVMs for all users (if any), exports a pickle `user_sim.p`
 7. Run `make_cache.py` for various preprocessing so that server starts faster (and make sure to run `sqlite3 as.db < schema.sql` if this is the very first time ever you're starting arxiv-sanity, which initializes an empty database).
-8. Start the mongodb daemon in the background. Mongodb can be installed by following the instructions here - https://docs.mongodb.com/tutorials/install-mongodb-on-ubuntu/.
-  * Start the mongodb server with - `sudo service mongod start`.
+8. Start the mongodb daemon in the background. Mongodb can be installed by following the instructions here - https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/ / https://docs.mongodb.com/tutorials/install-mongodb-on-ubuntu/.
+  * Start the mongodb server with - `sudo service mongod start`, if on mac run: `mongod --config /usr/local/etc/mongod.conf --fork`.
   * Verify if the server is running in the background : The last line of /var/log/mongodb/mongod.log file must be - 
 `[initandlisten] waiting for connections on port <port> `
 9. Run the flask server with `serve.py`. Visit localhost:5000 and enjoy sane viewing of papers!
