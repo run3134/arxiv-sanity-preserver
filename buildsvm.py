@@ -1,3 +1,12 @@
+'''
+where user database has info
+userid: papers read by the user with label; other papers with label 0 ==> build a model
+apply back to all papers: to sort
+take top # papers for recommendation: 我们没有take out papers the paper user has seen
+store result back to user_sim.p
+'''
+
+
 # standard imports
 import os
 import sys

@@ -12,7 +12,7 @@ from hashlib import md5
 from flask import Flask, request, session, url_for, redirect, \
      render_template, abort, g, flash, _app_ctx_stack
 from flask_limiter import Limiter
-from werkzeug import check_password_hash, generate_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 import pymongo
 
 from utils import safe_pickle_dump, strip_version, isvalidid, Config
@@ -715,4 +715,7 @@ if __name__ == "__main__":
   else:
     print('starting flask!')
     app.debug = False
-    app.run(port=args.port, host='0.0.0.0')
+    # 需要限start mongodb
+    # 再运行 python server.py
+    # app.run(port=args.port, host='0.0.0.0')
+    app.run(port=args.port, host='127.0.0.1')
